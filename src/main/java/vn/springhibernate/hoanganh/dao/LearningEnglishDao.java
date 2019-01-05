@@ -19,7 +19,7 @@ public class LearningEnglishDao {
 	public List<LearningEnglish> findByChaId(final String chaId){
 		Session session = this.sessionFactory.getCurrentSession();
 		return session.createQuery("FROM "+LearningEnglish.class.getName()
-				+" where chaid = "+chaId+" ", LearningEnglish.class).getResultList();
+				+" where chaid = '"+chaId+"' ", LearningEnglish.class).getResultList();
 	}
 	
 	public void updateLearningEnglish(LearningEnglish e) {
