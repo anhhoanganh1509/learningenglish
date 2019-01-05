@@ -42,7 +42,7 @@ public class LearningEnglishDao {
 	public List<LearningEnglish> findByChaIdAndState(final String chaId, final String state){
 		Session session = this.sessionFactory.getCurrentSession();
 		return session.createQuery("FROM "+LearningEnglish.class.getName()
-				+" where chaid = "+chaId+" and state = "+state+" ", LearningEnglish.class).getResultList();
+				+" where chaid = '"+chaId+"' and state = "+state+" ", LearningEnglish.class).getResultList();
 	}
 	
 }
