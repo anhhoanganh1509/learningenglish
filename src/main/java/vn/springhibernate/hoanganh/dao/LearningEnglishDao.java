@@ -19,7 +19,7 @@ public class LearningEnglishDao {
 	public List<LearningEnglish> findByChaId(final String chaId){
 		Session session = this.sessionFactory.getCurrentSession();
 		return session.createQuery("FROM "+LearningEnglish.class.getName()
-				+" where chaid = '"+chaId+"' orderby id asc", LearningEnglish.class).getResultList();
+				+" where chaid = '"+chaId+"' order by id asc", LearningEnglish.class).getResultList();
 	}
 	
 	public void updateLearningEnglish(LearningEnglish e) {
@@ -42,7 +42,7 @@ public class LearningEnglishDao {
 	public List<LearningEnglish> findByChaIdAndState(final String chaId, final String state){
 		Session session = this.sessionFactory.getCurrentSession();
 		return session.createQuery("FROM "+LearningEnglish.class.getName()
-				+" where chaid = '"+chaId+"' and state = "+state+" orderby id asc", LearningEnglish.class).getResultList();
+				+" where chaid = '"+chaId+"' and state = "+state+" order by id asc", LearningEnglish.class).getResultList();
 	}
 	
 }
