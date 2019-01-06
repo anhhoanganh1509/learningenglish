@@ -43,7 +43,11 @@
 						<c:if test="${not empty unit}">							
 							<c:forEach var="c" items="${unit}" varStatus="itr">						
 								<div class="row">
-									<div class="col col-xs-4 text-left"></div>
+									<div class="col col-xs-4 text-left">
+										<a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
+											Home
+										</a>
+									</div>
 									<div class="col col-xs-4 text-left">
 										<a href="${root}/leason/${c.id}" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
 											Unit&nbsp;${itr.index+1}&nbsp;${c.name}
@@ -68,6 +72,9 @@
 								<div class="col col-xs-4 text-left">
 									<a href="${root}/leason/${state}/0" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
 										Remind
+									</a>
+									<a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;float: right;"> 
+										Back
 									</a>
 								</div>
 							</div>	
