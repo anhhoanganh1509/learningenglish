@@ -44,11 +44,13 @@
 							<c:forEach var="c" items="${unit}" varStatus="itr">						
 								<div class="row">
 									<div class="col col-xs-4 text-left">
-										<c:if test="${itr.index = 0}">
-											<a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
-												Home
-											</a>
-										</c:if>
+										<c:choose>
+										    <c:when test="${itr.index=='0'}">
+										        <a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
+													Home
+												</a>
+										    </c:when>    										    
+										</c:choose>
 									</div>
 									<div class="col col-xs-4 text-left">
 										<a href="${root}/leason/${c.id}" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
