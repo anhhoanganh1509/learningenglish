@@ -44,9 +44,11 @@
 							<c:forEach var="c" items="${unit}" varStatus="itr">						
 								<div class="row">
 									<div class="col col-xs-4 text-left">
-										<a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
-											Home
-										</a>
+										<c:if test="${itr.index = 0}">
+											<a href="${root}/index" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
+												Home
+											</a>
+										</c:if>
 									</div>
 									<div class="col col-xs-4 text-left">
 										<a href="${root}/leason/${c.id}" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
