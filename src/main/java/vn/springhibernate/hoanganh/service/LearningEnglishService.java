@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import vn.springhibernate.hoanganh.dao.LearningEnglishDao;
 import vn.springhibernate.hoanganh.model.LearningEnglish;
+import vn.springhibernate.hoanganh.model.ViewTotalVocabularyCopy;
 
 @Service
 @Transactional
@@ -15,6 +16,10 @@ public class LearningEnglishService {
 	
 	@Autowired
 	private LearningEnglishDao eDao;
+
+	public List<ViewTotalVocabularyCopy> findByViewId() {
+		return eDao.findByViewId();
+	}
 	
 	public List<LearningEnglish> finByChaId(final String chaId) {
 		return eDao.findByChaId(chaId);

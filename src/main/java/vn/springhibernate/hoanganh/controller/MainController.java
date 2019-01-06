@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.springhibernate.hoanganh.model.LearningEnglish;
+import vn.springhibernate.hoanganh.model.ViewTotalVocabularyCopy;
 import vn.springhibernate.hoanganh.service.LearningEnglishService;
 
 @Controller
@@ -24,7 +25,7 @@ public class MainController {
 	
 	@RequestMapping(value = {"/","index"}, method = RequestMethod.GET)
 	public String index(Model model) {
-		List<LearningEnglish> leason = eService.finByChaId("0");
+		List<ViewTotalVocabularyCopy> leason = eService.findByViewId();
 		model.addAttribute("chapter",leason); 
 		return "index";
 	}

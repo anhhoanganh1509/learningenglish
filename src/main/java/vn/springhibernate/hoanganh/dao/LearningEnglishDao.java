@@ -9,12 +9,18 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import vn.springhibernate.hoanganh.model.LearningEnglish;
+import vn.springhibernate.hoanganh.model.ViewTotalVocabularyCopy;
 
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class LearningEnglishDao {
 	@Autowired
 	private SessionFactory sessionFactory;	
+
+	public List<ViewTotalVocabularyCopy> findByViewId(){
+		Session session = this.sessionFactory.getCurrentSession();
+		return session.createQuery("FROM "+ViewTotalVocabularyCopy.class.getName(), ViewTotalVocabularyCopy.class).getResultList();
+	}
 	
 	public List<LearningEnglish> findByChaId(final String chaId){
 		Session session = this.sessionFactory.getCurrentSession();
