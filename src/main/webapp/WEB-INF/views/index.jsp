@@ -27,7 +27,7 @@
 									<div class="col col-xs-4 text-left"></div>
 									<div class="col col-xs-4 text-center">
 										<a href="${root}/unit/${c.id}" class="btn btn-default" aria-controls="list" role="tab" data-toggle="tab" style="text-transform: capitalize;"> 
-											${c.name}&nbsp;(${c.subtotal}/${c.total})
+											${c.name}&nbsp;(${c.subtotal != null : c.subtotal ? 0}/${c.total})
 										</a>
 									</div>
 									<div class="col col-xs-4 text-left"></div>
